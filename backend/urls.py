@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from article.views import ArticleViewSet
+from article.views import ArticleViewSet, CategoryViewSet, TagViewSet
 from user.views import UserViewSet, GroupViewSet
 
 # Create a router and register our viewsets with it.
@@ -24,6 +24,8 @@ router = routers.DefaultRouter()
 router.register(r'articles', ArticleViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
+router.register(r'category', CategoryViewSet)
+router.register(r'tag', TagViewSet)
 
 urlpatterns = [
     # The API URLs are now determined automatically by the router.
